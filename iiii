@@ -58,18 +58,24 @@
 			text-align: center;		
     	}
     	
-    	#ledon, #ledoff {
+    	#fram, #bak, #høyre, #venstre {
     		color: white;
     		margin-top: 20px;
     		margin-bottom: 20px;
     	}
     	
-    	#ledon {
+    	#fram {
     		background-color: #3399ff;
     	}
     	
-    	#ledoff {
+    	#bak {
     		background-color: #66ffff;
+    		}
+    	#høyre {
+    		background-color: #3399ff;
+    		}
+    	#venstre {
+    		background-color: #ff0000;	
     	}
     
     </style>
@@ -104,7 +110,7 @@
 		<h1>Phone2Segway</h1>
 		
 		<ul>
-			<li>Segway kontroll" på kitet</li>
+			<li>Segway kontroll</li>
 			<li>Åpne denne nettsiden i Chromium på Android L/M</li>
 		</ul>
 		<form>
@@ -113,7 +119,7 @@
 		  <div><button id="connect" >Koble til enhet</button></div>
 		</form>
 		  <div class="button-container">
-		  <button id="ledon" onclick="ledOn()">Kjør fram</button>
+		 <p> <button id="ledon" onclick="ledOn()">Kjør fram</button></p>
 			<button id="ledoff" onclick="ledOff()">Kjør bakover</button>
 			<button id="ledon" onclick="ledOn()">sving til venstre</button>
 			<button id="ledoff" onclick="ledOff()">sving til høyre</button>
@@ -149,7 +155,7 @@
 		  };
 		</script>
 
-		<h3>Logg</h3>
+		<h3>HeiHei</h3>
 		<div id="output" class="output">
 		  <div id="content"></div>
 		  <div id="status"></div>
