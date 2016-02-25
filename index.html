@@ -34,15 +34,19 @@
         
         
 <script>
-function light(sw) {
-    var pic;
+function switch(sw) {
+    var tall;
     if (sw == 0) {
-        pic = 0
-    } else {
-        pic = 1
+        tall = 0
+    } else if(sw == 1) {
+        tall = 1
     }
+    document.getElementById('test').src = tall;
 }
 </script>
+
+
+ 
         <h3>
 <a id="welcome-to-github-pages" class="anchor" href="#welcome-to-github-pages" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Velkommen til en testside.</h3>
 
@@ -56,8 +60,9 @@ function light(sw) {
 <h3>
 <a id="designer-templates" class="anchor" href="#designer-templates" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Avsnitt 2</h3>
 <p> 
-<button type="button" onclick="light(1)">Light On</button>
-<button type="button" onclick="light(0)">Light Off</button>
+<button type="button" onclick="switch(0)">0</button>
+<button type="button" onclick="switch(1)">1</button>
+<p id="test">1</p>
 </p>
 
       </section>
