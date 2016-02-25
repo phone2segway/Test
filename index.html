@@ -44,14 +44,21 @@
 
 <h3>
 <a id="designer-templates" class="anchor" href="#designer-templates" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Avsnitt 2</h3>
-<p> 
-<button type="button" onclick="myFunction()">Click Me!</button>
+ 
+<button type="button" onclick="myFunction(0)">0!</button>
+<button type="button" onclick="myFunction(1)">1!</button>
 
-<p id="demo">This is a deasdasdmonstration.</p>
+<p id="demo">Tall.</p>
 
 <script>
 function myFunction() { 
-    document.getElementById("demo").innerHTML = "Hello JavaasdScript!";
+  var tall;
+    if (sw == 0) {
+       document.getElementById("demo").innerHTML = "0";
+    } else if(sw == 1) {
+        document.getElementById("demo").innerHTML = "1";
+    }
+    
 }
 </script>
 
