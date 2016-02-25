@@ -119,10 +119,10 @@
 		  <div><button id="connect" >Koble til enhet</button></div>
 		</form>
 		  <div class="button-container">
-		 <p> <button id="fram" onclick="ledOn()">fram</button></p>
-		 <button id="venstre" onclick="ledOn()">venstre</button>
-	       	 <button id="bak" onclick="ledOff()">bakover</button>
-	       	 <button id="høyre" onclick="ledOff()">høyre</button>
+		 <p> <button id="fram" onclick="Fram()">fram</button></p>
+		 <button id="venstre" onclick="Venstre()">venstre</button>
+	       	 <button id="bak" onclick="Bak()">bakover</button>
+	       	 <button id="høyre" onclick="Høyre()">høyre</button>
 	       	
 		 
 		  </div>
@@ -208,37 +208,66 @@
 				  });
 				}
 				
-				// Funksjon for å skru LED på
+				// Funksjon for å kjøre framover
 				
-				function ledOn() {
+				function Fram() {
 					'use strict';
 
 					if(myCharacteristic) {
-						log('> Skrur LED på...');
-						let ledValue = new Uint8Array([1]);
+						log('> Kjører fram...');
+						let Value = new Uint8Array([1]);
 						
-						myCharacteristic.writeValue(ledValue);
+						myCharacteristic.writeValue(Value);
 						
 					}
 				
 				};
 				
-				// Funksjon for å skru LED av
+				// Funksjon for å svinge til venstre
 				
-				function ledOff() {
+				function Venstre() {
 				  'use strict';
 
 				
 					if(myCharacteristic) {
-						log('> Skrur LED av...');
-						let ledValue = new Uint8Array([0]);
+						log('> svinger til venstre...');
+						let Value = new Uint8Array([2]);
+						
+						myCharacteristic.writeValue(Value);
+						
+					}
+				
+				};
+					// Funksjon for å svinge til høyre
+				
+				function Høyre() {
+				  'use strict';
+
+				
+					if(myCharacteristic) {
+						log('> svinger til høyre...');
+						let Value = new Uint8Array([3]);
+						
+						myCharacteristic.writeValue(Value);
+						
+					}
+				
+				};
+					// Funksjon for å Kjøre bakover
+				
+				function Bak() {
+				  'use strict';
+
+				
+					if(myCharacteristic) {
+						log('> Skal kjøre bakover...');
+						let ledValue = new Uint8Array([4]);
 						
 						myCharacteristic.writeValue(ledValue);
 						
 					}
 				
 				};
-				
 
 </script>
     
