@@ -200,11 +200,11 @@
 				  .then(service => service.getCharacteristic(characteristicUuid))
 				  .then(characteristic => {
 				  		myCharacteristic = characteristic;
-				  		log('> Tilkoblet enhet. LED kan nå styres.');
+				  		log('> Tilkoblet enhet. Segway kan nå styres.');
 
 					})
 				  .catch(error => {
-					log('Argh! ' + error);
+					log('Feil ' + error);
 				  });
 				}
 				
