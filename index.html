@@ -112,7 +112,10 @@
 		<ul>
 			<li>Segway kontroll</li>
 			<li>Åpne denne nettsiden i Chromium på Android L/M</li>
-	
+		<form>
+		  <div><label for="service">Service: </label><input id="service" type="text" list="services" autofocus placeholder="Bluetooth Service" value="00001523-1212-efde-1523-785feabcd123"></div>
+		  <div><label for="service">Characteristic: </label><input id="characteristic" type="text" list="characteristics" placeholder="Bluetooth Characteristic" value="00001525-1212-efde-1523-785feabcd123"></div>
+	       
 		  <div><button id="connect" >Koble til enhet</button></div>
 		</form>
 		  <div class="button-container">
@@ -121,10 +124,7 @@
 	       	 <button id="bak" onclick="Bak()">bakover</button>
 	       	 <button id="høyre" onclick="Høyre()">høyre</button>
 	       	 	</ul>
-		<form>
-		  <div><label for="service">Service: </label><input id="service" type="text" list="services" autofocus placeholder="Bluetooth Service" value="00001523-1212-efde-1523-785feabcd123"></div>
-		  <div><label for="service">Characteristic: </label><input id="characteristic" type="text" list="characteristics" placeholder="Bluetooth Characteristic" value="00001525-1212-efde-1523-785feabcd123"></div>
-	       	
+	
 		 
 		  </div>
 
