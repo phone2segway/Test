@@ -178,7 +178,7 @@
       
       			
       			var myCharacteristic;
-      			var Tall;
+      			
       			 // Søker etter enheter
 
       			function onFormSubmit() {
@@ -216,7 +216,8 @@
 
 					if(myCharacteristic) {
 						log('> Kjører fram...');
-					        Tall="1";
+						let Tall = new Uint8Array([1]);
+						
 						myCharacteristic.writeValue(Tall);
 						
 					}
@@ -231,8 +232,9 @@
 				
 					if(myCharacteristic) {
 						log('> svinger til venstre...');
+						let Tall = new Uint8Array([2]);
 						
-						myCharacteristic.writeValue(2);
+						myCharacteristic.writeValue(Tall);
 						
 					}
 				
@@ -245,8 +247,9 @@
 				
 					if(myCharacteristic) {
 						log('> svinger til høyre...');
+						let Tall = new Uint8Array([3]);
 						
-						myCharacteristic.writeValue(3);
+						myCharacteristic.writeValue(Tall);
 						
 					}
 				
@@ -259,8 +262,9 @@
 				
 					if(myCharacteristic) {
 						log('> kjører bakover...');
-					
-						myCharacteristic.writeValue(4);
+						let Tall = new Uint8Array([4]);
+						
+						myCharacteristic.writeValue(Tall);
 						
 					}
 				
