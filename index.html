@@ -178,7 +178,7 @@
       
       			
       			var myCharacteristic;
-      			
+      			var Tall;
       			 // Søker etter enheter
 
       			function onFormSubmit() {
@@ -216,8 +216,8 @@
 
 					if(myCharacteristic) {
 						log('> Kjører fram...');
-					
-						myCharacteristic.writeValue(1);
+					        Tall=1;
+						myCharacteristic.writeValue(Tall);
 						
 					}
 				
