@@ -216,11 +216,9 @@
 
 					if(myCharacteristic) {
 						log('> Kjører fram...');
-						<script>
-						Var Tall = 1;
+					
+						myCharacteristic.writeValue(1);
 						
-						myCharacteristic.writeValue(Tall);
-						</script>
 					}
 				
 				};
@@ -233,9 +231,8 @@
 				
 					if(myCharacteristic) {
 						log('> svinger til venstre...');
-						Tall = 2;
 						
-						myCharacteristic.writeValue(Tall);
+						myCharacteristic.writeValue(2);
 						
 					}
 				
@@ -248,9 +245,8 @@
 				
 					if(myCharacteristic) {
 						log('> svinger til høyre...');
-						Tall = 3;
 						
-						myCharacteristic.writeValue(Tall);
+						myCharacteristic.writeValue(3);
 						
 					}
 				
@@ -263,9 +259,8 @@
 				
 					if(myCharacteristic) {
 						log('> kjører bakover...');
-						Tall = 4;
-						
-						myCharacteristic.writeValue(Tall);
+					
+						myCharacteristic.writeValue(4);
 						
 					}
 				
