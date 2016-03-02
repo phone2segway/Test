@@ -216,10 +216,11 @@
 
 					if(myCharacteristic) {
 						log('> Kjører fram...');
-						let Tall = new Uint8Array(['1']);
+						<script>
+						Var Tall = 1;
 						
 						myCharacteristic.writeValue(Tall);
-						
+						</script>
 					}
 				
 				};
@@ -232,7 +233,7 @@
 				
 					if(myCharacteristic) {
 						log('> svinger til venstre...');
-						let Tall = new Uint8Array(['2']);
+						Tall = 2;
 						
 						myCharacteristic.writeValue(Tall);
 						
@@ -247,7 +248,7 @@
 				
 					if(myCharacteristic) {
 						log('> svinger til høyre...');
-						let Tall = new Uint8Array(['3']);
+						Tall = 3;
 						
 						myCharacteristic.writeValue(Tall);
 						
@@ -262,7 +263,7 @@
 				
 					if(myCharacteristic) {
 						log('> kjører bakover...');
-						let Tall = new Uint8Array(['4']);
+						Tall = 4;
 						
 						myCharacteristic.writeValue(Tall);
 						
