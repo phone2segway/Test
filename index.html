@@ -214,13 +214,13 @@
 				function Fram() {
 					'use strict';
 
-				//	if(myCharacteristic) {
+					if(myCharacteristic) {
 						log('> Kjører fram...');
-						var Tall = new Uint8Array([1], [240]);
+						let Tall = new Uint8Array([1], [240]);
 						
-						return myCharacteristic.writeValue(100);
+						return myCharacteristic.writeValue(Tall);
 						
-				//	}
+					}
 				
 				};
 				
