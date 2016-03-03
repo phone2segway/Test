@@ -216,9 +216,9 @@
 
 					if(myCharacteristic) {
 						log('> Kjører fram...');
-						let Tall = new Uint8Array([1], [240]);
+						var Tall = new Uint8Array([1], [240]);
 						
-						my_characteristic.writeValue(Tall);
+						return my_characteristic.writeValue(Tall);
 						
 					}
 				
