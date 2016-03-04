@@ -202,7 +202,6 @@
 				  .then(characteristic => {
 				  		myCharacteristic = characteristic;
 				  		log('> Tilkoblet enhet. Segway kan nå styres.');
-						myCharacteristic.writeValue(1);
 					})
 				  .catch(error => {
 					log('Feil ' + error);
