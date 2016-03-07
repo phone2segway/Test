@@ -58,7 +58,7 @@
 			text-align: center;		
     	}
     	
-    	#fram, #bak, #høyre, #venstre {
+    	#fram, #bak, #framhøyre, #framvenstre, #bakhøyre, #bakvenstre, #stop {
     		color: #000000;
     		margin-top: 20px;
     		margin-bottom: 20px;
@@ -68,16 +68,26 @@
     		background-color: #3399ff;
     	}
     	
+    	#framhøyre {
+    		background-color: #3399ff;
+    	}
+    	
+    	#framvenstre {
+    		background-color: #3399ff;
+    	}
     	#bak {
     		background-color: #66ffff;
     		}
-    	#høyre {
+    	#bakhøyre {
     		background-color: #3399ff;
     		}
-    	#venstre {
+    	#bakvenstre {
     		background-color: #3399ff;	
     	}
-    
+    	
+    	#stop {
+    		background-color: #3399ff;
+    	}
     </style>
     <script>
       // If we're running on a real web server (as opposed to localhost, which is whitelisted),
@@ -120,9 +130,12 @@
 		</form>
 		  <div class="button-container">
 		 <p> <button id="fram" onclick="Fram()">fram</button></p>
-		 <button id="venstre" onclick="Venstre()">venstre</button>
-	       	 <button id="bak" onclick="Bak()">bakover</button>
-	       	 <button id="høyre" onclick="Høyre()">høyre</button>
+		 <button id="framvenstre" onclick="framvenstre()">framvenstre</button>
+	       	 <button id="framhøyre" onclick="framhøyre()">framhøyre</button>
+	       	 <p><button id="stop" onclick="stop()">stop</button></p>
+	       	 <p><button id="bakvenstre" onclick="bakvenstre()">bakvenstre</button></p>
+	       	 <p><button id="bakhøyre" onclick="bakhøyre()">bakhøyre</button></p>
+	       	 <p><button id="bak" onclick="bak()">bak</button></p>
 	       	 	</ul>
 	
 		 
@@ -215,7 +228,7 @@
 
 					if(myCharacteristic) {
 						log('> Kjører fram...');
-						let Tall = new Uint8Array([1], [240]);
+						let Tall = new Uint8Array([2], [240]);
 						
 						return myCharacteristic.writeValue(Tall);
 					
@@ -226,13 +239,13 @@
 				
 				// Funksjon for å svinge til venstre
 				
-				function Venstre() {
+				function framvenstre() {
 				  'use strict';
 
 				
 					if(myCharacteristic) {
 						log('> svinger til venstre...');
-						let Tall = new Uint8Array([2], [240]);
+						let Tall = new Uint8Array([1], [240]);
 						
 						myCharacteristic.writeValue(Tall);
 						
@@ -241,7 +254,7 @@
 				};
 					// Funksjon for å svinge til høyre
 				
-				function Høyre() {
+				function framhøyre() {
 				  'use strict';
 
 				
@@ -262,13 +275,48 @@
 				
 					if(myCharacteristic) {
 						log('> kjører bakover...');
-						let Tall = new Uint8Array([4], [240]);
+						let Tall = new Uint8Array([5], [240]);
 						
 						myCharacteristic.writeValue(Tall);
 						
 					}
 				
-				};
+				
+				function Bakvenstre() {
+				  'use strict';
+
+				
+					if(myCharacteristic) {
+						log('> kjører bakoverV...');
+						let Tall = new Uint8Array([4], [240]);
+						
+						myCharacteristic.writeValue(Tall);
+						
+					}
+					
+					function Bakhøyre() {
+				  'use strict';
+
+				
+					if(myCharacteristic) {
+						log('> kjører bakoverH...');
+						let Tall = new Uint8Array([6], [240]);
+						
+						myCharacteristic.writeValue(Tall);
+						
+					}
+					
+					function stop() {
+				  'use strict';
+
+				
+					if(myCharacteristic) {
+						log('> kjører bakover...');
+						let Tall = new Uint8Array([7], [240]);
+						
+						myCharacteristic.writeValue(Tall);
+						
+					}
 
 </script>
     
