@@ -228,7 +228,7 @@
 					'use strict';
 
 					if(myCharacteristic) {
-						log('> Kjører fram...');
+						log('> Kjører fram');
 						let Tall = new Uint8Array([2], [240]);
 						
 						return myCharacteristic.writeValue(Tall);
@@ -245,7 +245,7 @@
 
 				
 					if(myCharacteristic) {
-						log('> svinger til venstre...');
+						log('> svinger til venstre');
 						let Tall = new Uint8Array([1], [240]);
 						
 						myCharacteristic.writeValue(Tall);
@@ -260,7 +260,7 @@
 
 				
 					if(myCharacteristic) {
-						log('> svinger til høyre...');
+						log('> svinger til høyre');
 						let Tall = new Uint8Array([3], [240]);
 						
 						myCharacteristic.writeValue(Tall);
@@ -275,7 +275,7 @@
 
 				
 					if(myCharacteristic) {
-						log('> kjører bakover...');
+						log('> kjører bakover');
 						let Tall = new Uint8Array([5], [240]);
 						
 						myCharacteristic.writeValue(Tall);
@@ -289,7 +289,7 @@
 
 				
 					if(myCharacteristic) {
-						log('> kjører bakoverV...');
+						log('> kjører bakoverV');
 						let Tall = new Uint8Array([4], [240]);
 						
 						myCharacteristic.writeValue(Tall);
@@ -302,7 +302,7 @@
 
 				
 					if(myCharacteristic) {
-						log('> kjører bakoverH...');
+						log('> kjører bakoverH');
 						let Tall = new Uint8Array([6], [240]);
 						
 						myCharacteristic.writeValue(Tall);
@@ -316,7 +316,7 @@
 
 				
 					if(myCharacteristic) {
-						log('> STOP...');
+						log('> STOP!');
 						let Tall = new Uint8Array([7], [240]);
 						
 						myCharacteristic.writeValue(Tall);
