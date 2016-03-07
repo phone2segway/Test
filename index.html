@@ -129,7 +129,7 @@
 		  <div><button id="connect" >Koble til enhet</button></div>
 		</form>
 		  <div class="button-container">
-		 <button id="fram" onclick="fram()">fram</button>
+		 <button id="fram" onclick="Fram()">fram</button>
 		 <br><button id="framvenstre" onclick="framvenstre()">framvenstre</button>
 	       	 <button id="framhøyre" onclick="framhøyre()">framhøyre</button></br>
 	       	 <br><button id="stop" onclick="stop()">stop</button></br>
@@ -231,7 +231,7 @@
 						log('> Kjører fram...');
 						let Tall = new Uint8Array([2], [240]);
 						
-						myCharacteristic.writeValue(Tall);
+						return myCharacteristic.writeValue(Tall);
 					
 					//	.then(function(myCharacteristic) {return myCharacteristic.writeValue(100);})	
 					}
@@ -270,7 +270,7 @@
 				};
 					// Funksjon for å Kjøre bakover
 				
-				function Bak() {
+				function bak() {
 				  'use strict';
 
 				
@@ -284,7 +284,7 @@
 				
 				};
 				
-				function Bakvenstre() {
+				function bakvenstre() {
 				  'use strict';
 
 				
@@ -297,7 +297,7 @@
 					}
 					
 				};
-			 		function Bakhøyre() {
+			 		function bakhøyre() {
 				  'use strict';
 
 				
@@ -316,7 +316,7 @@
 
 				
 					if(myCharacteristic) {
-						log('> kjører bakover...');
+						log('> STOP...');
 						let Tall = new Uint8Array([7], [240]);
 						
 						myCharacteristic.writeValue(Tall);
