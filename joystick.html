@@ -1,82 +1,81 @@
 <html>
-<head>
-  <meta charset="UTF-8" />
-  
-  <title>Joystick Demo</title>
-
-  <style type="text/css">
-    body {
-      background: #ffffff;
-      font-size: 11pt;
-      font-family: "Trebuchet MS", "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", Tahoma, sans-serif;
-      margin:20px;
-      min-height: 1000px;
-    }
-    #joystick-one {
-      background: #000000;
-      opacity: 0.2;
-      position:absolute; 
-      top:50px; 
-      left:50px;
-    }
-    #joystick-two {
-      background: #000000;
-      border-radius:10px;
-      position:absolute; 
-      top:760px; 
-      left:100px;
-    }
-    #joystick-three {
-      background: #000000;
-      border-radius:10px;
-      position:absolute; 
-      top: 800px; 
-      left: 50px;
-    }
-  </style>
-
-</head>
-<body>
-
-  <div style="background:url(maze.gif); width:940px; height:590px; position: absolute; top:50px; left:50px;">
-    <!-- http://hereandabove.com/maze/mazeorig.form.html -->
-  </div>
-  <div id="joystick-one-sim-circ" style="width:15px; height:15px; background-color:#45E678; position:absolute; border-radius:5px;"></div>
-  <div id="value" style="position:absolute; top:820px; left:120px; border:2px solid #f0f0f0; font-size:8em; padding:10px;">x0 y0</div>
-
-  <div id="joystick-one"></div>
-  <div id="joystick-two"></div>
-  <div id="joystick-three"></div>
-
-
-  <script src="jquery.js" type="text/javascript" charset="utf-8"></script>
-  <script src="raphael.js" type="text/javascript" charset="utf-8"></script>
-  <script src="joystick.jquery.js" type="text/javascript" charset="utf-8"></script>
-
-  <script type="text/javascript">
-  $(function() {
-    $('#joystick-two').joystick({"width":400, "height":30, "axis":"x"}, function(x, y){ $("#value").text("x" + Math.round(x) + " y" + y); });
-    $('#joystick-three').joystick({"width":30, "height":200, "axis":"y"}, function(x, y){ $("#value").text("x" + x + " y" + Math.round(y)); });      
-    $('#joystick-one').joystick({"width":950, "height":600, "pathColor":"#45E678", "virtualPositionEasing":"linear", "virtualPositionMaxValue":10}, positionCallback);
-    function positionCallback(x, y){
-      _x = x;
-      _y = y;
-    }    
-    // simulator
-    var $simCirc = $("#joystick-one-sim-circ");
-    var simCircPos = {"x":56, "y":163};
-    var _x = 0;
-    var _y = 0;
-    setInterval(function(){
-      simCircPos.x += _x;
-      simCircPos.y += _y;
-      simCircPos.x = simCircPos.x > $(window).width() ? 0 : simCircPos.x;
-      simCircPos.x = simCircPos.x < 0 ? $(window).width() : simCircPos.x;
-      simCircPos.y = simCircPos.y > $(window).height() ? 0 : simCircPos.y;
-      simCircPos.y = simCircPos.y < 0 ? $(window).height() : simCircPos.y;
-      $simCirc.css({"left":simCircPos.x, "top":simCircPos.y});
-    }, 1000/60); // fps
-  });
-  </script>
-</body>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+		
+		<style>
+		body {
+			overflow	: hidden;
+			padding		: 0;
+			margin		: 0;
+			background-color: #BBB;
+		}
+		#info {
+			position	: absolute;
+			top		: 0px;
+			width		: 100%;
+			padding		: 5px;
+			text-align	: center;
+		}
+		#info a {
+			color		: #66F;
+			text-decoration	: none;
+		}
+		#info a:hover {
+			text-decoration	: underline;
+		}
+		#container {
+			width		: 100%;
+			height		: 100%;
+			overflow	: hidden;
+			padding		: 0;
+			margin		: 0;
+			-webkit-user-select	: none;
+			-moz-user-select	: none;
+		}
+		</style>
+	</head>
+	<body>
+		<div id="container"></div>
+		<div id="info">
+			<a href="http://learningthreejs.com/blog/2011/12/26/let-s-make-a-3d-game-virtual-joystick/" target="_blank">VirtualJoystick.js</a>
+			A library javascript to provide a virtual joystick on touchscreen.
+			-
+			inspired by this
+			<a href="http://sebleedelisle.com/2011/04/multi-touch-game-controller-in-javascripthtml5-for-ipad/">post</a>
+			from
+			<a href="http://sebleedelisle.com/">seb.ly</a>
+			<br/>
+			Touch the screen and move
+			-
+			works with mouse too as debug
+			<br/>
+			<span id="result"></span>
+		</div> 
+		<script src="../virtualjoystick.js"></script>
+		<script>
+			console.log("touchscreen is", VirtualJoystick.touchScreenAvailable() ? "available" : "not available");
+	
+			var joystick	= new VirtualJoystick({
+				container	: document.getElementById('container'),
+				mouseSupport	: true,
+			});
+			joystick.addEventListener('touchStart', function(){
+				console.log('down')
+			})
+			joystick.addEventListener('touchEnd', function(){
+				console.log('up')
+			})
+			setInterval(function(){
+				var outputEl	= document.getElementById('result');
+				outputEl.innerHTML	= '<b>Result:</b> '
+					+ ' dx:'+joystick.deltaX()
+					+ ' dy:'+joystick.deltaY()
+					+ (joystick.right()	? ' right'	: '')
+					+ (joystick.up()	? ' up'		: '')
+					+ (joystick.left()	? ' left'	: '')
+					+ (joystick.down()	? ' down' 	: '')	
+			}, 1/30 * 1000);
+		</script>
+	</body>
 </html>
