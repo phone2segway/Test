@@ -332,7 +332,7 @@
 				  'use strict';
 						
 					var kverdi = document.getElementsByName("kpverdi")[0].value;
-					var Kp = 210;
+					var Kp = kverdi+200;
 					if(myCharacteristic) {
 						log('> sender kp!');
 						let Tall = new Uint8Array([Kp], [240]);
