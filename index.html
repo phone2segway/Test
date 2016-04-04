@@ -139,7 +139,7 @@
 	       	 <button id="bakvenstre" onclick="bakvenstre()">bakvenstre</button>
 	       	 <button id="bakhøyre" onclick="bakhøyre()">bakhøyre</button>
 	       	 <br><button id="bak" onclick="bak()">bak</button></br>
-	       	 <br><input type = "number" name = "kpverdi" value=""><br>
+	       	 <br><input type = "number" name = "kpverdi" value="0"><br>
 	       	 <br><button id="sendverdi" onclick="Send Verdi()">Send Kp</button></br>
 	       	 
 	       	 	</ul>
@@ -334,7 +334,7 @@
 				
 					if(myCharacteristic) {
 						log('> sender kp!');
-						let Tall = new Uint8Array([11], [240]);
+						let Tall = new Uint8Array([Kp], [240]);
 						
 						myCharacteristic.writeValue(Tall);
 						
